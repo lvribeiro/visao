@@ -1,0 +1,6 @@
+<launch>
+    <node  pkg="visao" type="video_pub" name="image_publisher" output="screen">    
+        <param name="camera_id" value="1" />
+        <param name="loop_rate" value="30" />
+	</node>
+</launch>
