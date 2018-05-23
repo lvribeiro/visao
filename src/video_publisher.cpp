@@ -48,8 +48,8 @@ int main(int argc, char** argv)
         cap.set(CV_CAP_PROP_FRAME_HEIGHT, height_target);
     }
 
-    int cvt2gray;
-    _nh.param("cvt2gray", cvt2gray, 0);
+    int mono;
+    _nh.param("mono", mono, 0);
 
 
     ROS_INFO_STREAM("Opened the stream, starting to publish.");
@@ -64,7 +64,7 @@ int main(int argc, char** argv)
         if (pub.getNumSubscribers() > 0)
         {
 		    if(!frame.empty()) {
-                if (cvt2gray != 0)
+                if (mono != 0)
                 {
 		    	    cv::cvtColor(frame, gray, CV_BGR2GRAY);
 		    	    msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", gray).toImageMsg();
