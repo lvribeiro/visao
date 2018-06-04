@@ -1,7 +1,6 @@
 <launch>
-    
     <!-- Passar os parametros como argumentos -->
-    <arg name="camera_name" default="camera"/>
+    <arg name="camera_name" default="camera0"/>
     <arg name="fps" default="30"/>
     <arg name="camera_id" default="0"/>
     <arg name="width" default="640"/>
@@ -13,7 +12,7 @@
     <!-- Alem de passar o camera_id apropriado, se for usar -->
     <group ns="$(arg camera_name)">
         <node  pkg="visao" type="video_pub" name="$(arg camera_name)_stream" output="screen">    
-            <remap from="camera" to="image_raw" />
+            <remap from="image" to="image_raw" />
             <param name="camera_id" value="$(arg camera_id)" />
             <param name="fps" type="int" value="$(arg fps)" />
             <param name="width" type="int" value="$(arg width)" />
