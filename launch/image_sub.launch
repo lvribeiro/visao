@@ -1,0 +1,4 @@
+<launch>
+    <node  pkg="visao" type="image_sub" name="compressed_listener">    
+    </node>
+</launch>
