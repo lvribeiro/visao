@@ -11,7 +11,7 @@ int main(int argc, char** argv)
     ros::NodeHandle nh;
     ros::NodeHandle _nh("~"); // to get the private params
     image_transport::ImageTransport it(nh);
-    image_transport::Publisher pub = it.advertise("camera", 1);
+    image_transport::Publisher pub = it.advertise("image", 1);
 
     int camera_id;
     cv::VideoCapture cap;
