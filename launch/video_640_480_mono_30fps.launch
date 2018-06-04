@@ -10,6 +10,8 @@
     <arg name="mono" default="1"/>
 
     <!-- Alem de passar o camera_id apropriado, se for usar -->
+    <param name="/compressed_listener/image_transport" value="compressed"/>
+
     <group ns="$(arg camera_name)">
         <node  pkg="visao" type="video_pub" name="$(arg camera_name)_stream" output="screen">    
             <remap from="image" to="image_raw" />
