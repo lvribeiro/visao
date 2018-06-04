@@ -20,6 +20,9 @@ include_directories(
 
 add_executable(image_sub src/image_subscriber.cpp)
 add_executable(video_pub src/video_publisher.cpp)
+add_executable(image_sub_mono src/image_subscriber_mono.cpp)
+
 
 target_link_libraries(image_sub ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 target_link_libraries(video_pub ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(image_sub_mono ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
